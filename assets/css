@@ -1,0 +1,146 @@
+---
+---
+
+@import "jekyll-theme-minimal";  /* load theme CSS first */
+
+/* ===== Publications list ===== */
+ul.pubs { 
+  list-style-type: disc; 
+  padding-left: 1.2em; 
+  margin: 0 0 1rem 0; 
+}
+
+ul.pubs li { 
+  margin: 0 0 1rem 0; 
+  line-height: 1.5; 
+}
+
+/* Title stays normal size (inherits), metadata a bit smaller/softer */
+ul.pubs li .meta { 
+  font-size: 0.9em; 
+  color: #555; 
+}
+
+/* [Abstract] link on the same line as the citation */
+ul.pubs li .abslink { 
+  margin-left: 0.5em; 
+  text-decoration: underline; 
+  font-size: 0.9em; 
+}
+
+/* Abstract box: light grey, indented, rounded */
+.abstract-box { 
+  display: none;                 /* toggled via JS */
+  background: #f6f8fa; 
+  border-left: 4px solid #d0d7de;
+  padding: 12px 16px;
+  margin: 0.5rem 0 1rem 1rem;    /* indent under the citation */
+  border-radius: 8px;
+  color: #444;
+  font-size: 0.9em;              /* slightly smaller than title */
+}
+
+/* Make [Abstract]/[Close] look like normal text (not blue links) */
+.pubs .abslink,
+.pubs .abslink:link,
+.pubs .abslink:visited,
+.pubs .abslink:hover,
+.pubs .abslink:active {
+  color: inherit !important;    /* same color as surrounding text */
+  text-decoration: none;        /* no underline */
+  font-weight: normal;
+  cursor: pointer;              /* still looks clickable */
+}
+
+/* Tighter spacing when a pubs list follows a heading */
+h2 + ul.pubs, h3 + ul.pubs { 
+  margin-top: 0.5rem; 
+}
+
+/* Working paper title options */
+/* Non-linked working paper titles: underline, NOT bold */
+.WP {
+  font-weight: normal;           /* or 400 */
+  text-decoration: underline;
+  text-decoration-thickness: .08em;
+  text-underline-offset: .12em;
+  color: inherit;                /* keep body text color */
+  cursor: default;
+}
+
+/* ===== Optional: keep <details> inline if you use it elsewhere ===== */
+details,
+details summary {
+  display: inline !important;
+  vertical-align: baseline;
+}
+details { margin-left: 0.5em; }
+details summary {
+  list-style: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+details summary::-webkit-details-marker { display: none; }
+
+/* Adjust how the profile photo looks */
+
+
+header img {
+  border-radius: 50%;   /* adjust % for more/less oval */
+}
+
+/* FOR ICONS */ /* minimal styling for the icon row */
+.social-icons {
+  text-align: center;
+  margin-top: .6rem;
+  white-space: nowrap;     /* keep on one line */
+}
+
+.social-icons a {
+  color: #267CB9;          /* Minimal theme link blue */
+  margin: 0 .45em;
+  text-decoration: none;
+}
+
+.social-icons a:hover { color: #069; }
+
+/* Only Bluesky smaller */
+.social-icons .fa-bluesky {
+  font-size: 1.6rem;        /* tweak until it matches visually (e.g., 1.55–1.7) */
+}
+
+.social-icons i,
+.social-icons .cv-link {
+  font-size: 1.8rem;       /* base size for all */
+  line-height: 1;
+  vertical-align: bottom;  /* align bottoms */
+  font-weight: 700;        /* makes CV feel icon-like */
+}
+
+.social-icons .cv-link { margin-left: -0.00em; } 
+
+/* Remove Minimal theme's mobile section border (the thin line under icons) */
+@media screen and (max-width: 960px) {
+  section {
+    border: 0 !important;          /* the theme sets border-width: 1px 0; */
+    /* optional: keep bottom border only:
+    border-top: 0 !important;
+    border-bottom: 0 !important;   */
+  }
+}
+/* Hide the theme’s "View My GitHub Profile" line */
+.view { display: none !important; }
+
+/* Hide the "Hosted on GitHub Pages — Theme by orderedlist" footer */
+footer { display: none !important; }
+
+/* email different font */ 
+/* Monospace email like \texttt */
+header p .desc-tt {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;   /* tweak if you want */
+  letter-spacing: 0.01em;
+}
+header p .desc-tt a { color: inherit; text-decoration: none; }
+header p .desc-tt a:hover { text-decoration: underline; }
