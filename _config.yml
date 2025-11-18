@@ -1,0 +1,15 @@
+title: Nora Shaalan
+description: >-
+  PhD Candidate in Comparative Literature<br>
+  Department of English and Comparative Literature, Columbia University
+# Use the built-in Minimal theme on GitHub Pages
+theme: jekyll-theme-minimal
+
+# Optional settings
+logo: /assets/img/profile.jpg   # put Nora’s headshot at assets/img/profile.jpg
+show_downloads: false
+google_analytics:
+# For a user site at https://<username>.github.io, leave baseurl empty and set url accordingly.
+# For a custom domain, set that in GitHub Pages settings (it will create a CNAME file automatically).
+url: ""        # e.g. "https://norashaalan.github.io" or "https://norashaalan.net" when you know it
+baseurl: ""    # leave empty for user/primary site
