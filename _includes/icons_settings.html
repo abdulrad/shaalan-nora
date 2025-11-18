@@ -1,0 +1,70 @@
+<!-- Add fonts for icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v9/font/simple-icons.min.css">
+
+<!-- ICONS --> 
+<div id="social-icons" class="social-icons">
+
+  <!-- Scholar  -->
+  <a href="#" target="_blank" rel="noopener" aria-label="Google Scholar">
+    <i class="fa-brands fa-google-scholar"></i>
+  </a>
+  
+  <!-- LinkedIn -->
+  <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+    <i class="fa-brands fa-linkedin"></i>
+  </a>
+
+  <!-- Bluesky (or X/other – you can change this later) -->
+  <a href="#" target="_blank" rel="noopener" aria-label="Bluesky">
+    <i class="fa-brands fa-bluesky"></i>
+  </a>
+
+  <!-- Email -->
+  <a href="#" aria-label="Email">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+
+  <!-- CV (text link) -->
+  <a href="#" target="_blank" rel="noopener" aria-label="CV" class="cv-link">CV</a>
+</div>
+
+<style>
+  .social-icons {
+    display: none; /* becomes visible once JS places it */
+    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
+  }
+  .social-icons a {
+    margin-right: 0.4rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+  .social-icons .cv-link {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>
+
+<script>
+  (function() {
+    function placeIcons() {
+      var header = document.querySelector('.page-header');
+      var icons  = document.getElementById('social-icons');
+      if (!header || !icons) return;
+
+      // insert icons AFTER the description paragraph (the affiliation line)
+      var desc = header.querySelector('p');
+      (desc || header).insertAdjacentElement('afterend', icons);
+
+      icons.style.display = 'block';
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', placeIcons);
+    } else {
+      placeIcons();
+    }
+  })();
+</script>
